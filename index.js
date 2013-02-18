@@ -5,10 +5,11 @@ var server = new Hapi.Server('localhost', 8000);
 
 // Define the route
 var hello = {
-    handler: function (request) {
 
-        request.reply({ greeting: 'hello world' });
+    handler: function (request) {
+        request.reply({ greeting: 'hello' + ' ' + request.query.name});
     }
+
 };
 
 // Add the route
