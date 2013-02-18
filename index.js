@@ -8,6 +8,12 @@ var hello = {
 
     handler: function (request) {
         request.reply({ greeting: 'hello' + ' ' + request.query.name});
+    },
+
+    validate: {
+      query: {
+        name: Hapi.Types.String().required()
+      }
     }
 
 };
